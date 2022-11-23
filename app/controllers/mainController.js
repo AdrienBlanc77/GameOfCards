@@ -3,21 +3,33 @@ const datamapper = require('../datamapper');
 
 const mainController = {
     homePage(request,response){
-        response.render("index.ejs");
+        const isConnected = request.session.isConnected;
+        response.render("index.ejs", {
+            isConnected,
+            title : 'Jeu de carte'
+        });
     },
     
     async gamePage(request,response){
-        const playerPioche = await datamapper.getAllCardsRandomly();
-        const dealerPioche = await datamapper.getAllCardsRandomly();
-
-        console.log(playerPioche);
-        console.log(dealerPioche);
-
+        const piochePlayer = await datamapper.getAllCardsRandomly();
+        const piocheIA = await datamapper.getAllCardsRandomly();
+        console.log(piochePlayer);
+        console.log(piocheIA);
         response.render("board.ejs", {
-            playerPioche,
-            dealerPioche
+            piochePlayer,
+            piocheIA
         });
     },
+
+    async dashboardPage(request,response){
+        const allCards = await datamapper.getAllCards();
+        response.render("dashboard", {
+            allCards,
+            title: "Gestion des cartes",
+            script: '/javascript/dashboard.js',
+        });
+    }
+    
 };
 
 module.exports = mainController;

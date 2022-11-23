@@ -1,0 +1,21 @@
+<%- include('./partials/header'); %>
+
+<div class="topContainer">
+    <a href="#">Ajouter une carte</a>
+</div>
+<div class="mainContainer"></div>
+
+<div class="containerCard">
+    <% allCards.forEach(card => { %>
+        <div class="card">
+            <a class="cardUpdate cardLink hidden" href="#">Modifier</a>
+            <div><%=card.card_name%></div>
+            <div>PV : <%=card.pv%></div>
+            <div>Force : <%=card.attack%></div>
+            <div>Cout : <%=card.mana%></div>
+            <a class="cardDelete cardLink hidden" href="/card/delete/<%= card.id %>">Supprimer</a>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('./partials/footer'); %>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a class="header-link" href="/">ACCUEIL</a>
+        </nav>
+        <a href="/"><img class="logo-oclock" src="/images/logo-oclock.png" alt="logo TrombinO'clock"></a>
+        <div>
+            <% if(locals.isConnected){ %>
+                <a class="signin" href="/dashboard">Gestion des cartes</a>
+            <% } else { %>
+                <a class="signin" href="/login">Se connecter</a>
+            <% } %>
+        </div>
+    </header>
+    <main>
+        <h1><%= locals.title %></h1>

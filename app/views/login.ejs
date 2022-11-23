@@ -1,0 +1,16 @@
+<%- include('./partials/header'); %>
+
+    <div class="topContainer">
+        <form action="/login/check" method="post">
+            <label for="id">Identifiant</label>
+            <input type="text" name="id" id="id">
+            <label for="pwd">Password</label>
+            <input type="password" name="pwd" id="pwd">
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+
+    <div class="mainContainer"></div>
+
+
+<%- include('./partials/footer'); %>

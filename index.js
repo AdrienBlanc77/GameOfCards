@@ -10,8 +10,7 @@ const sessionConfig = {
     saveUninitialized: true,
     cookie: {
         secure: false,
-        maxAge: (1000*60*60), // ça fait une heure
-        isConnected : false
+        maxAge: (1000*60*60)
     },
 };
 
@@ -21,6 +20,13 @@ app.set('views', './app/views');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended : true}));
+
+app.use((request, response, next) => {
+    if (!request.session.isConnected) {
+        request.session.isConnected = false;
+    }
+    next();
+})
 
 app.use(router);
 

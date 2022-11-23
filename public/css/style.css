@@ -1,64 +1,122 @@
-.boardGame {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;   
-    height: 100vh;
-    background-color: rgb(51, 162, 155);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root {
+    --home-color1 : #0cad93;
+    --home-color2 : #0ac3a7;
+    --hover: #0ca289;
+    --font : 'Montserrat', sans-serif;
+    --font-color : #fffdd8;
+    --red : #d83a37;
+    --or : #ffb400;
 }
 
-    .boardIA, .boardPlayer {
-        align-items: center;
-        justify-content: space-around;
-        display: flex;
-        width: 100%;
-        height: 100px;
-        background-color: red;
-    }    
+body {
+    background-color: var(--home-color2);
+    color: var(--font-color);
+    font-family: var(--font);
+    text-align: center;
+}
 
-        .pvIA, .pvPlayer {
-            width: 60px;
-            height: 80px;
-            background-color: blue;
-        }
 
-        .manaIA, .manaPlayer {
-            width: 60px;
-            height: 80px;
-            background-color: green;
-        }
+/* ====== HEADER ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--home-color1);
+    font-weight: bold;
+}
 
-        .containerPioche {
-            height: 80px;
-            width: 80px;
-            background-color: rgb(170, 75, 183);
-        }
+.header-nav {
+    display: flex;
+}
 
-        .containerCardsIA, .containerCardsPlayer {
-            display: flex;
-            justify-content: space-around;
-            width: 600px;
-            height: 80px;
-            background-color: orange;
-        }
+.header-link {
+    display: inline-block;
+    line-height: 3em;
+    padding: 0.5em;
+    margin: 0 0.5em;
+    transition-duration: 200ms;
+}
 
-        .cards {
-            width: 12%;
-            height: 70px;
-            background-color: white;    
-        }
+.header-link:hover {
+    background-color: var(--hover);
+}
 
-    .battlefieldIA, .battlefieldPlayer {         
-        width: 95%;
-        height: 200px;
-        margin:auto;       
-        background-color: brown;
-    }
+.logo-oclock {
+    width: 3em;
+}
 
-        .endOfTurnIA, .endOfTurnPlayer {
-            text-align: center;
-            width: 60px;
-            height: 60px;
-            margin-top: 70px;
-            margin-left: 15px;
-            background-color: #fff;            
-        }
+.signin {
+    color: var(--font-color);
+    font-weight: bold;
+    background: none;
+    border : 3px solid var(--font-color);
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 20px;
+    transition-duration: 200ms;
+}
+.signin:hover {
+    background-color: var(--hover);
+}
+
+
+
+/* ====== MAIN ====== */
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 1em 0;
+    font-size: 8em;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+}
+
+.topContainer{
+    font-size: 2em;
+    line-height: 2em;
+}
+
+.text-link{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.containerCard {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    border: 1.5px solid var(--red);
+    border-radius: 5px;
+    width: 200px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--font-color);
+    color: red;
+    transition-duration: 200ms;
+    margin: 20px 0px;
+}
+
+
+.cardSelected {
+    background-color: var(--home-color1);
+}
+
+.scale {
+    transform: scale(2);
+    font-size: 0.8em;
+}
+
+.hidden {
+    display: none;
+}

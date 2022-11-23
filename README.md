@@ -1,7 +1,7 @@
 # Version 1:
-- Création page accueil
-- Création page de jeu
-- Création des cartes
+- Création page accueil *
+- Création page de jeu *
+- Création des cartes *
 - Mise en place de la pioche
 - Mise en place du mana
 - Mise en place des points de vie du joueur

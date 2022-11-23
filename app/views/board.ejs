@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeu de carte</title>
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gameCard.css">
   </head>
 
   <body>
@@ -21,7 +21,7 @@
               <div class="cards">Francois Jedi</div>
               <div class="cards">Wiwi la mage sommeil</div>
             </div>
-            <div class="containerPioche">Pioche</div>
+            <div class="containerPioche piochePlayer"> <img class="imagePioche" src="/images/dosDeCarte.png" alt="dos de la carte de la pioche"></div>
             <div class="pvIA">100PV</div>
         </div>
       
@@ -43,10 +43,13 @@
           <div class="cards">Francois Jedi</div>
           <div class="cards">Wiwi la mage sommeil</div>
         </div>
-        <div class="containerPioche">Pioche</div>
+        <div class="containerPioche piocheIA"> <img class="imagePioche" src="/images/dosDeCarte.png" alt="dos de la carte de la pioche"></div>
         <div class="pvPlayer">100PV</div>
       </div>
     </div>
+
+    <script src="/javascript/game.js"></script>
+
   </body>
 
 </html>
